@@ -8,9 +8,14 @@ import {
   deleteFromList,
 } from "../services/list.service.js";
 
+// Import Satpam (middleware) untuk verifikasi token dari auth middleware
+import { verifyToken } from "../middlewares/auth.middleware.js";
+
 // Buat router baru
 const router = express.Router();
 
+// Gunakan Satpam
+router.use(verifyToken);
 /*
  * =======================================================
  * ROUTE UNTUK READ (GET)
