@@ -32,11 +32,16 @@ Follow these steps to run the project locally:
 2. Install DependenciesBashnpm install
 3. Setup DatabaseEnsure you have Docker installed and running.Run a MySQL container mapping port 3306.Create a database named chill_movie.Import the required tables (user, items, daftar_saya).
 4. Environment VariablesCreate a .env file in the root directory based on .env.example:
+   ```env
    DB_HOST=localhost
    DB_PORT=3306
    DB_USER=root
-   DB_PASS=your_password
+   DB_PASS=password_database_kamu_disini
    DB_NAME=chill_movie
+   JWT_SECRET=rahasia_negara
+   EMAIL_USER=email_kamu@gmail.com
+   EMAIL_PASS=app_password_google_kamu
+   ```
 5. Run the ServerThe server is configured to run on Port 5001 to avoid conflicts.
    node index.js
    Server will start at: http://localhost:5001

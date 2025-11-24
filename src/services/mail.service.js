@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import "dotenv/config";
 
 // 1. Setup Transporter (Tukang Pos)
 const transporter = nodemailer.createTransport({
@@ -6,8 +7,8 @@ const transporter = nodemailer.createTransport({
   port: 587, // Pakai port 587 (TLS) jangan 465
   secure: false, // false untuk port 587
   auth: {
-    user: "moh.farhan.21212@gmail.com",
-    pass: "mmcfgmciaabskflg", // App Password kamu
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS, // App Password kamu
   },
 });
 
